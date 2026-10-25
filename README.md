@@ -7,14 +7,15 @@ Aplikasi web portal resmi inventarisasi peralatan laboratorium, panduan standar 
 
 ## Fitur Utama
 
-1. **Katalog 20 Alat Laboratorium Kesehatan Lingkungan**:
-   - Foto asli beresolusi tinggi tersimpan secara lokal tanpa dependensi tautan eksternal.
-   - Meliputi 5 pilar keilmuan sanitasi:
-     - *Glassware & Gravimetri* (Labu Erlenmeyer 500 mL, Buret Asam 50 mL, Desikator Kaca 240 mm)
-     - *Kualitas Air & Limbah* (DO Meter Portabel, Turbidimeter 0–1000 NTU, Benchtop pH Meter, Spektrofotometer UV-Vis, Hotplate Magnetic Stirrer)
-     - *Udara, Kebisingan & K3* (Sound Level Meter Tipe 2, Digital Lux Meter, Vane Anemometer, Midget Impinger Gas Sampler)
-     - *Vektor & Mikrobiologi* (Autoclave Vertikal 50 L, Inkubator Bakteriologi 37°C, Digital Colony Counter, Mikroskop Binokuler Olympus CX23, Mesin Thermal Fogging)
-     - *Alat Ukur Sanitasi Lapangan* (Digital Food Core Thermometer, Sanitarian Field Kit, Mikropipet 100–1000 µL)
+1. **Katalog 55 Alat Laboratorium Kesehatan Lingkungan (6 Laboratorium Terpadu)**:
+   - Foto produk studio berlatar putih bersih (`#FFFFFF`) tersimpan secara lokal tanpa dependensi tautan eksternal.
+   - Meliputi **6 Laboratorium Resmi Jurusan Kesehatan Lingkungan**:
+     - **Lab Kimia (14 Alat)**: Labu Erlenmeyer 500 mL, DO Meter Digital, Benchtop pH Meter, Spektrofotometer UV-Vis, Midget Impinger Gas Sampler, Buret Asam 50 mL, Desikator Vakum 240 mm, Hotplate Magnetic Stirrer, Jar Test Flocculator 6 Paddle, COD Reactor 150°C, Chlorine Meter Digital DPD, Neraca Analitik 4 Desimal, Waterbath & Destilator Aquades, Food Contamination Rapid Test Kit.
+     - **Lab Fisika (11 Alat)**: Sound Level Meter Tipe 2, Turbidimeter Portabel, Lux Meter Digital, Digital Vane Anemometer, Food Safety Core Thermometer, High Volume Air Sampler (HVAS), Heat Stress Monitor (ISBB/WBGT), TDS/EC/Salinity Meter, Thermohygrometer Digital, Vibration Meter Digital, Personal Dust Sampler (LVAS).
+     - **Lab Mikrobiologi (9 Alat)**: Autoclave Vertikal 50 L, Inkubator Bakteriologi 37°C, Digital Colony Counter, Mikropipet 100–1000 µL, Laminar Air Flow (LAF) Aseptis, Microbiology Air Sampler (MAS-100), Oven Sterilisasi Kering 200°C, Membrane Filtration Manifold, Vortex Mixer.
+     - **Lab Vektor (8 Alat)**: Mesin Thermal Fogger, Fly Grill Kepadatan Lalat, Kit Survei Jentik & Ovitrap, Aspirator & Kandang Nyamuk, WHO Susceptibility & Bioassay Cone Kit, Compression Sprayer Hudson X-Pert, Perangkap Tikus Hidup & Kit Pinjal, Mikroskop Stereo Binokuler.
+     - **Lab Parasitologi (6 Alat)**: Mikroskop Binokuler Olympus CX23, Centrifuge Digital Laboratorium, Kato-Katz Kit & Set Pewarnaan, Baermann Funnel Apparatus, Saringan Bertingkat (Mesh Sieve) & Kit Flotasi, Hand Tally Counter & Mikrometer Mikroskop.
+     - **Workshop / Rekayasa Sanitasi (7 Alat)**: Sanitarian Field Kit Lengkap, Set Pemotong & Senai Ulir Pipa (Pipe Threader), Water Pressure Test Pump, Komposter Putar (Rotary Composter) & Soil Tester, Unit Reaktor Filtrasi Air Bersih Multimedia, Cetakan Jamban Leher Angsa, Set Perkakas Bengkel & Pemanas Pipa PPR.
 
 2. **Rincian Spesifikasi Teknis Terstandar**:
    - Setiap alat dilengkapi merk/model (Iwaki Pyrex, Hach, Thermo Scientific, Olympus, Memmert, Testo), rentang ukur, akurasi/resolusi, bahan konstruksi, catu daya, dan metode uji acuan (*SNI*, *Permenkes*, *APHA*, *ISO*).
