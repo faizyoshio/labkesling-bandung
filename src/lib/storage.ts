@@ -71,3 +71,27 @@ export const getBorrowHistory = async (): Promise<BorrowRequestRecord[]> => {
   const raw = localStorage.getItem(STORAGE_KEY);
   return safeParseJSON<BorrowRequestRecord[]>(raw, []);
 };
+
+/**
+ * 5. Enkripsi Satu Arah (SHA-256) menggunakan Web Crypto API native
+ * Digunakan untuk memverifikasi password akses Log Pinjam tanpa menyimpan plaintext password.
+ */
+export const sha256Hex = async (text: string): Promise<string> => {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+};
+
+/**
+ * 6. Verifikasi Password Log Pinjam terhadap Hash di Environment Variable (VITE_LOG_PASSWORD_HASH)
+ */
+export const verifyLogPassword = async (inputPassword: string): Promise<boolean> => {
+  const expectedHash = (import.meta.env.VITE_LOG_PASSWORD_HASH || '').trim().toLowerCase();
+  if (!expectedHash) {
+    return false;
+  }
+  const inputHash = await sha256Hex(inputPassword.trim());
+  return inputHash === expectedHash;
+};
