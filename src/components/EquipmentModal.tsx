@@ -55,11 +55,11 @@ export const EquipmentModal: React.FC<EquipmentModalProps> = ({
           
           {/* Main Visual & Key Stats */}
           <div className="grid sm:grid-cols-12 gap-5 items-center">
-            <div className="sm:col-span-5 h-48 rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+            <div className="sm:col-span-5 h-52 rounded-xl overflow-hidden bg-white border border-slate-200 p-3 flex items-center justify-center">
               <img
                 src={item.image_url}
                 alt={item.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain object-center"
               />
             </div>
             

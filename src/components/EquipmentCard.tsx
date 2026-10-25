@@ -51,29 +51,22 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
       {/* Image Container with clickable trigger for detail */}
       <div 
         onClick={() => onViewDetail(item)}
-        className="relative h-48 w-full bg-slate-100 overflow-hidden cursor-pointer"
+        className="relative h-52 w-full bg-white border-b border-slate-100 p-3 flex items-center justify-center overflow-hidden cursor-pointer"
       >
         <img
           src={item.image_url}
           alt={item.name}
-          className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-300"
+          className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
 
         {/* Status Badge Top Left */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 left-3 z-10">
           {getStatusBadge()}
         </div>
 
-        {/* Capacity / Spec Pill Top Right */}
-        {item.capacity_spec && (
-          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-slate-900/90 text-white shadow-xs">
-            {item.capacity_spec}
-          </div>
-        )}
-
         {/* Category Pill Bottom Left */}
-        <div className="absolute bottom-3 left-3">
+        <div className="absolute bottom-3 left-3 z-10">
           <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md bg-white/95 text-slate-800 border border-slate-200 shadow-xs">
             {item.category}
           </span>
@@ -96,12 +89,16 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
           </p>
 
           {/* Detail Spesifikasi Teknis Singkat */}
-          {item.brand_model && (
+          {(item.brand_model || item.capacity_spec) && (
             <div className="mt-2.5 p-2 rounded-lg bg-slate-50 border border-slate-200 text-[11px] text-slate-700 flex items-start gap-1.5">
               <Sliders className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
-              <div className="min-w-0">
-                <span className="font-semibold text-slate-800 block">Spesifikasi:</span>
-                <span className="text-slate-600 line-clamp-1">{item.brand_model}</span>
+              <div className="min-w-0 space-y-0.5">
+                {item.brand_model && (
+                  <span className="font-semibold text-slate-800 line-clamp-1 block">{item.brand_model}</span>
+                )}
+                {item.capacity_spec && (
+                  <span className="text-slate-600 line-clamp-1 block">{item.capacity_spec}</span>
+                )}
               </div>
             </div>
           )}
