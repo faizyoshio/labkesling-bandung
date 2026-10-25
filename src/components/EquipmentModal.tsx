@@ -26,7 +26,7 @@ export const EquipmentModal: React.FC<EquipmentModalProps> = ({
       <div className="absolute inset-0" onClick={onClose} aria-hidden="true" />
 
       {/* Modal Card */}
-      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh] z-10">
+      <div className="animate-modal-pop relative w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh] z-10">
         
         {/* Header with Close Button */}
         <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 border-b border-slate-200 bg-slate-50">

@@ -243,10 +243,11 @@ export function App() {
           </div>
         ) : filteredEquipment.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredEquipment.map((item) => (
+            {filteredEquipment.map((item, idx) => (
               <EquipmentCard
-                key={item.id}
+                key={`${selectedCategory}-${item.id}`}
                 item={item}
+                index={idx}
                 onViewDetail={setActiveDetailItem}
                 onDirectBorrow={handleDirectBorrow}
                 onAddToCart={handleAddToCart}

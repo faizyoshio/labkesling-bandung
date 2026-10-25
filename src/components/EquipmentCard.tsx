@@ -4,6 +4,7 @@ import { Info, Plus, Send, MapPin, CheckCircle2, AlertTriangle, XCircle, Sliders
 
 interface EquipmentCardProps {
   item: Equipment;
+  index?: number;
   onViewDetail: (item: Equipment) => void;
   onDirectBorrow: (item: Equipment) => void;
   onAddToCart: (item: Equipment) => void;
@@ -12,6 +13,7 @@ interface EquipmentCardProps {
 
 export const EquipmentCard: React.FC<EquipmentCardProps> = ({
   item,
+  index = 0,
   onViewDetail,
   onDirectBorrow,
   onAddToCart,
@@ -45,8 +47,13 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
     }
   };
 
+  const staggerDelay = `${Math.min(index * 45, 500)}ms`;
+
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-slate-300 transition-all flex flex-col group">
+    <div
+      style={{ animationDelay: staggerDelay }}
+      className="animate-fade-up card-interactive bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300/80 flex flex-col group"
+    >
       
       {/* Image Container with clickable trigger for detail */}
       <div 
@@ -56,7 +63,7 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
         <img
           src={item.image_url}
           alt={item.name}
-          className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-contain object-center group-hover:scale-108 group-hover:-translate-y-0.5 transition-transform duration-500 ease-out"
           loading="lazy"
         />
 
@@ -149,9 +156,9 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
             type="button"
             onClick={() => onDirectBorrow(item)}
             disabled={item.status === 'Maintenance'}
-            className="col-span-6 py-2 px-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 disabled:opacity-50 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 shadow-xs transition-all"
+            className="btn-shine col-span-6 py-2 px-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 disabled:opacity-50 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 shadow-xs hover:shadow-md hover:shadow-emerald-700/15 transition-all"
           >
-            <Send className="w-3.5 h-3.5" />
+            <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             <span>Pinjam via WA</span>
           </button>
         </div>

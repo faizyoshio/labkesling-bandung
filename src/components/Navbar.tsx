@@ -93,12 +93,15 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Cart / Selected Items Badge */}
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 sm:px-3.5 sm:py-2 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5 shadow-md shadow-emerald-600/20 transition-all"
+              className="btn-shine relative p-2.5 sm:px-3.5 sm:py-2 bg-emerald-600 hover:bg-emerald-700 hover:-translate-y-0.5 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5 shadow-md shadow-emerald-600/20 transition-all duration-200"
             >
               <ShoppingBag className="w-4 h-4" />
               <span className="hidden sm:inline">Keranjang</span>
               {cartCount > 0 && (
-                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 text-[11px] font-bold leading-none text-emerald-700 bg-white rounded-full shadow-xs">
+                <span
+                  key={cartCount}
+                  className="animate-badge-pop inline-flex items-center justify-center min-w-5 h-5 px-1.5 text-[11px] font-bold leading-none text-emerald-700 bg-white rounded-full shadow-xs"
+                >
                   {cartCount}
                 </span>
               )}
