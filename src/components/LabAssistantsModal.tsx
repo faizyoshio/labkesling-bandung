@@ -106,7 +106,7 @@ export const LabAssistantsModal: React.FC<LabAssistantsModalProps> = ({
                   : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-200'
               }`}
             >
-              Kepala Lab & PLP (3)
+              Kepala Lab & PLP (2)
             </button>
             <button
               onClick={() => setFilter('aslab')}
@@ -116,7 +116,7 @@ export const LabAssistantsModal: React.FC<LabAssistantsModalProps> = ({
                   : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-200'
               }`}
             >
-              Asisten Mahasiswa (5)
+              Asisten 6 Lab (6)
             </button>
           </div>
 

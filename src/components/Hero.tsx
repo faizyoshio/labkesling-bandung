@@ -140,9 +140,9 @@ export const Hero: React.FC<HeroProps> = ({
                     1
                   </span>
                   <div>
-                    <strong className="text-slate-800 block font-semibold">Tentukan Alat Praktikum</strong>
+                    <strong className="text-slate-800 block font-semibold">Pilih Laboratorium & Alat Praktikum</strong>
                     <span className="text-slate-500 text-[11px]">
-                      Cari alat berdasarkan parameter uji (Air, Udara/K3, Vektor, Mikrobiologi).
+                      Filter berdasarkan 6 lab (Lab Kimia, Fisika, Mikrobiologi, Vektor, Parasitologi, Workshop).
                     </span>
                   </div>
                 </li>

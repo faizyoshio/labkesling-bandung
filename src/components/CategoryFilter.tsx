@@ -1,6 +1,6 @@
 import React from 'react';
 import type { EquipmentCategory } from '../types';
-import { FlaskConical, Gauge, Wind, Bug, Sparkles, Droplets } from 'lucide-react';
+import { FlaskConical, Gauge, Bug, Sparkles, Microscope, Wrench, Biohazard } from 'lucide-react';
 
 interface CategoryFilterProps {
   selectedCategory: EquipmentCategory;
@@ -15,11 +15,12 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
 }) => {
   const categories: { label: EquipmentCategory; icon: React.ReactNode }[] = [
     { label: 'Semua', icon: <Sparkles className="w-4 h-4" /> },
-    { label: 'Glassware', icon: <FlaskConical className="w-4 h-4" /> },
-    { label: 'Kualitas Air & Limbah', icon: <Droplets className="w-4 h-4" /> },
-    { label: 'Udara, Kebisingan & K3', icon: <Wind className="w-4 h-4" /> },
-    { label: 'Vektor & Mikrobiologi', icon: <Bug className="w-4 h-4" /> },
-    { label: 'Alat Ukur Sanitasi', icon: <Gauge className="w-4 h-4" /> },
+    { label: 'Lab Kimia', icon: <FlaskConical className="w-4 h-4" /> },
+    { label: 'Lab Fisika', icon: <Gauge className="w-4 h-4" /> },
+    { label: 'Lab Mikrobiologi', icon: <Biohazard className="w-4 h-4" /> },
+    { label: 'Lab Vektor', icon: <Bug className="w-4 h-4" /> },
+    { label: 'Lab Parasitologi', icon: <Microscope className="w-4 h-4" /> },
+    { label: 'Workshop', icon: <Wrench className="w-4 h-4" /> },
   ];
 
   return (

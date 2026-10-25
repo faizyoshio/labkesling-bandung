@@ -1,10 +1,11 @@
 export type EquipmentCategory = 
   | 'Semua' 
-  | 'Glassware' 
-  | 'Kualitas Air & Limbah' 
-  | 'Udara, Kebisingan & K3' 
-  | 'Vektor & Mikrobiologi' 
-  | 'Alat Ukur Sanitasi';
+  | 'Lab Kimia' 
+  | 'Lab Fisika' 
+  | 'Lab Mikrobiologi' 
+  | 'Lab Vektor' 
+  | 'Lab Parasitologi' 
+  | 'Workshop';
 
 export interface Equipment {
   id: string;
