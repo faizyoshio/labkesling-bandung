@@ -161,13 +161,26 @@ export const EquipmentModal: React.FC<EquipmentModalProps> = ({
 
           {/* Section: SOP & Keselamatan */}
           {item.sop_notes && (
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
                 <ShieldCheck className="w-4 h-4 text-amber-700" />
                 <span>Standar Operasional Prosedur (SOP) & K3 Lab</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 text-xs sm:text-sm text-amber-950 leading-relaxed whitespace-pre-line">
-                {item.sop_notes}
+              <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200">
+                <ol className="space-y-2.5">
+                  {item.sop_notes
+                    .split(/\n|(?=\d+\.\s)/)
+                    .map((step) => step.replace(/^\d+\.\s*/, '').trim())
+                    .filter(Boolean)
+                    .map((stepText, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-amber-950 leading-relaxed">
+                        <span className="w-5 h-5 rounded-md bg-amber-200/80 text-amber-900 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 border border-amber-300/80">
+                          {idx + 1}
+                        </span>
+                        <span className="flex-1">{stepText}</span>
+                      </li>
+                    ))}
+                </ol>
               </div>
             </div>
           )}
