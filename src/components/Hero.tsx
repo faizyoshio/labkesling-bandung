@@ -14,7 +14,8 @@ export const Hero: React.FC<HeroProps> = ({
   onOpenAssistants 
 }) => {
   const formatDisplayPhone = (num: string) => {
-    const digits = num.replace(/\D/g, '');
+    const digits = (num || '').replace(/\D/g, '');
+    if (!digits) return 'Belum diatur di ENV';
     if (digits.startsWith('62')) {
       const rest = digits.slice(2);
       if (rest.length === 11) {

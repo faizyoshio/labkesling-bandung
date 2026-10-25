@@ -22,7 +22,7 @@ Aplikasi web portal resmi inventarisasi peralatan laboratorium, panduan standar 
 
 3. **Pengajuan Peminjaman Cepat (1-Klik via WhatsApp)**:
    - Klik satu tombol pada alat yang diinginkan (misal: **Labu Erlenmeyer 500 mL**), formulir peminjaman otomatis terisi.
-   - Generator otomatis menyusun draf surat permohonan resmi dalam Bahasa Indonesia baku yang santun dan membuka chat WhatsApp PLP (*Ade Kamaludin*) dengan nomor terverifikasi `+62 896-4652-4262`.
+   - Generator otomatis menyusun draf surat permohonan resmi dalam Bahasa Indonesia baku yang santun dan membuka chat WhatsApp PLP sesuai nomor yang diatur pada `.env`.
    - Mendukung **Keranjang Peminjaman Multi-Alat** untuk meminjam beberapa instrumen sekaligus dalam 1 permohonan.
 
 4. **Struktur Tim Pengelola & Asisten Laboratorium**:
@@ -73,8 +73,8 @@ Seluruh identitas laboratorium dan kontak PIC dikelola melalui Environment Varia
 | `VITE_LAB_NAME` | Nama Laboratorium | `Laboratorium Terpadu Kesehatan Lingkungan` |
 | `VITE_CAMPUS_NAME` | Nama Kampus | `Poltekkes Kemenkes Bandung` |
 | `VITE_DEPARTMENT_NAME` | Nama Jurusan | `Jurusan Kesehatan Lingkungan (Sanitasi)` |
-| `VITE_LAB_WHATSAPP_NUMBER` | Nomor WA PLP (format intl) | `6289646524262` |
-| `VITE_ADMIN_NAME` | Nama PLP / Penanggung Jawab | `Ade Kamaludin (PLP)` |
+| `VITE_LAB_WHATSAPP_NUMBER` | Nomor WA PLP (format intl) | `628xxxxxxxxxx` |
+| `VITE_ADMIN_NAME` | Nama PLP / Penanggung Jawab | `Nama Admin PLP (PLP)` |
 | `VITE_OPERATING_HOURS` | Jam Operasional Lab | `Senin - Jumat: 08:00 - 16:00 WIB (Kampus Cimahi)` |
 | `VITE_LOGO_URL` | Berkas Logo Kampus | `/logo-poltekkes-bandung.png` |
 

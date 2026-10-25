@@ -348,6 +348,8 @@ export function App() {
         campusName={settings.campus_name}
         departmentName={settings.department_name}
         labName={settings.lab_name}
+        adminName={settings.admin_name}
+        whatsappNumber={settings.whatsapp_number}
       />
 
     </div>

@@ -1,11 +1,11 @@
 import type { BorrowFormData, CartItem, LabSettings } from '../types';
 
 /**
- * Sanitasi nomor telepon agar hanya berisi digit numerik standar internasional (contoh: 6289646524262).
+ * Sanitasi nomor telepon agar hanya berisi digit numerik standar internasional (contoh: 628xxxxxxxxxx).
  * Mencegah karakter ilegal, injeksi parameter URL, atau nomor kosong.
  */
 export const sanitizePhoneNumber = (phone: string): string => {
-  const cleaned = phone.replace(/\D/g, '');
+  const cleaned = (phone || '').replace(/\D/g, '');
   if (cleaned.startsWith('0')) {
     return '62' + cleaned.slice(1);
   }
@@ -13,8 +13,7 @@ export const sanitizePhoneNumber = (phone: string): string => {
   if (/^62[0-9]{8,13}$/.test(cleaned)) {
     return cleaned;
   }
-  // Fallback ke kontak default PLP
-  return '6289646524262';
+  return '';
 };
 
 /**
@@ -55,12 +54,12 @@ export const formatWhatsAppMessageText = (
     })
     .join('\n');
 
-  return `Yth. Bapak ${settings.admin_name}
+  return `Yth. Bapak/Ibu ${settings.admin_name}
 ${settings.lab_name}
 ${settings.department_name}
 ${settings.campus_name}
 
-Selamat pagi/siang Pak Ade, mohon izin menyampaikan permohonan peminjaman alat laboratorium untuk keperluan praktikum/penelitian dengan rincian sebagai berikut:
+Selamat pagi/siang, mohon izin menyampaikan permohonan peminjaman alat laboratorium untuk keperluan praktikum/penelitian dengan rincian sebagai berikut:
 
 *Identitas Peminjam:*
 - Nama Lengkap: ${cleanName}

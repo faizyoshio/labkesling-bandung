@@ -96,6 +96,10 @@ export const BorrowModal: React.FC<BorrowModalProps> = ({
       setErrorMessage('Program studi & tingkat wajib dipilih.');
       return;
     }
+    if (!settings.whatsapp_number || !settings.whatsapp_number.trim()) {
+      setErrorMessage('Nomor WhatsApp PLP belum dikonfigurasi pada Environment Variables (VITE_LAB_WHATSAPP_NUMBER).');
+      return;
+    }
 
     setIsSubmitting(true);
     setErrorMessage('');
@@ -161,7 +165,11 @@ export const BorrowModal: React.FC<BorrowModalProps> = ({
                 Formulir Peminjaman Alat Laboratorium
               </h2>
               <p className="text-[11px] text-slate-500">
-                Tujuan WhatsApp: <strong className="text-slate-700">+{settings.whatsapp_number}</strong> ({settings.admin_name})
+                Tujuan WhatsApp:{' '}
+                <strong className="text-slate-700">
+                  {settings.whatsapp_number ? `+${settings.whatsapp_number}` : 'Belum diatur di ENV'}
+                </strong>{' '}
+                ({settings.admin_name})
               </p>
             </div>
           </div>

@@ -9,6 +9,8 @@ interface LabAssistantsModalProps {
   campusName: string;
   departmentName: string;
   labName: string;
+  adminName?: string;
+  whatsappNumber?: string;
 }
 
 export const LabAssistantsModal: React.FC<LabAssistantsModalProps> = ({
@@ -17,12 +19,30 @@ export const LabAssistantsModal: React.FC<LabAssistantsModalProps> = ({
   campusName,
   departmentName,
   labName,
+  adminName,
+  whatsappNumber,
 }) => {
   const [filter, setFilter] = useState<'all' | 'plp' | 'aslab'>('all');
 
   if (!isOpen) return null;
 
-  const filteredTeam: LabAssistant[] = labAssistantsList.filter((item: LabAssistant) => {
+  const dynamicTeam: LabAssistant[] = labAssistantsList.map((item) => {
+    if (item.id === 'aslab-2' && adminName && !adminName.includes('Belum Dikonfigurasi')) {
+      const cleanName = adminName.replace(/\s*\(PLP\)\s*/i, '').trim();
+      return {
+        ...item,
+        name: cleanName,
+        phone: whatsappNumber || item.phone,
+        avatar_url: `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanName)}&background=0d9488&color=fff&size=128`,
+      };
+    }
+    return {
+      ...item,
+      phone: item.phone || whatsappNumber || '',
+    };
+  });
+
+  const filteredTeam: LabAssistant[] = dynamicTeam.filter((item: LabAssistant) => {
     if (filter === 'plp') return item.role.includes('Kepala') || item.role.includes('PLP');
     if (filter === 'aslab') return item.role.includes('Asisten');
     return true;
