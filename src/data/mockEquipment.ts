@@ -7,7 +7,7 @@ export const initialLabSettings: LabSettings = {
   department_name: 'Jurusan Kesehatan Lingkungan (Sanitasi)',
   whatsapp_number: '',
   admin_name: 'PLP Laboratorium (Belum Dikonfigurasi di ENV)',
-  operating_hours: 'Senin - Jumat: 08:00 - 16:00 WIB (Gedung Lab Kesling Cimahi)',
+  operating_hours: 'Senin - Jumat: 08:00 - 16:00 WIB (Poltekkes Kemenkes Bandung Kampus B)',
   logo_url: '/logo-poltekkes-bandung.png',
 };
 

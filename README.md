@@ -75,7 +75,7 @@ Seluruh identitas laboratorium dan kontak PIC dikelola melalui Environment Varia
 | `VITE_DEPARTMENT_NAME` | Nama Jurusan | `Jurusan Kesehatan Lingkungan (Sanitasi)` |
 | `VITE_LAB_WHATSAPP_NUMBER` | Nomor WA PLP (format intl) | `628xxxxxxxxxx` |
 | `VITE_ADMIN_NAME` | Nama PLP / Penanggung Jawab | `Nama Admin PLP (PLP)` |
-| `VITE_OPERATING_HOURS` | Jam Operasional Lab | `Senin - Jumat: 08:00 - 16:00 WIB (Kampus Cimahi)` |
+| `VITE_OPERATING_HOURS` | Jam Operasional Lab | `Senin - Jumat: 08:00 - 16:00 WIB (Poltekkes Kemenkes Bandung Kampus B)` |
 | `VITE_LOGO_URL` | Berkas Logo Kampus | `/logo-poltekkes-bandung.png` |
 
 ---

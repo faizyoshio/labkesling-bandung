@@ -29,13 +29,13 @@ export const EquipmentModal: React.FC<EquipmentModalProps> = ({
       <div className="animate-modal-pop relative w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh] z-10">
         
         {/* Header with Close Button */}
-        <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 border-b border-slate-200 bg-slate-50">
-          <div className="flex items-center gap-2">
-            <span className="text-xs uppercase tracking-wider font-bold px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200">
+        <div className="flex items-center justify-between gap-2 px-4 sm:px-6 py-3.5 border-b border-slate-200 bg-slate-50">
+          <div className="flex flex-wrap items-center gap-1.5 min-w-0">
+            <span className="text-[11px] sm:text-xs uppercase tracking-wider font-bold px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200 shrink-0">
               {item.category}
             </span>
             {item.capacity_spec && (
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700">
+              <span className="text-[11px] sm:text-xs font-semibold px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 truncate max-w-[200px] sm:max-w-xs">
                 {item.capacity_spec}
               </span>
             )}
@@ -43,7 +43,7 @@ export const EquipmentModal: React.FC<EquipmentModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition-colors shrink-0"
             aria-label="Tutup Detail Alat"
           >
             <X className="w-5 h-5" />
@@ -103,44 +103,44 @@ export const EquipmentModal: React.FC<EquipmentModalProps> = ({
                 <tbody>
                   {item.brand_model && (
                     <tr className="border-b border-slate-100 bg-slate-50/60">
-                      <td className="py-2.5 px-3.5 font-semibold text-slate-700 w-1/3">Merk & Model</td>
-                      <td className="py-2.5 px-3.5 text-slate-900 font-medium">{item.brand_model}</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 font-semibold text-slate-700 w-2/5 sm:w-1/3 align-top">Merk & Model</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 text-slate-900 font-medium break-words">{item.brand_model}</td>
                     </tr>
                   )}
                   {item.measurement_range && (
                     <tr className="border-b border-slate-100">
-                      <td className="py-2.5 px-3.5 font-semibold text-slate-700">Rentang Ukur / Kapasitas</td>
-                      <td className="py-2.5 px-3.5 text-slate-800">{item.measurement_range}</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 font-semibold text-slate-700 align-top">Rentang Ukur / Kapasitas</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 text-slate-800 break-words">{item.measurement_range}</td>
                     </tr>
                   )}
                   {item.accuracy_resolution && (
                     <tr className="border-b border-slate-100 bg-slate-50/60">
-                      <td className="py-2.5 px-3.5 font-semibold text-slate-700">Ketelitian / Resolusi</td>
-                      <td className="py-2.5 px-3.5 text-slate-800">{item.accuracy_resolution}</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 font-semibold text-slate-700 align-top">Ketelitian / Resolusi</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 text-slate-800 break-words">{item.accuracy_resolution}</td>
                     </tr>
                   )}
                   {item.material && (
                     <tr className="border-b border-slate-100">
-                      <td className="py-2.5 px-3.5 font-semibold text-slate-700">Bahan Konstruksi</td>
-                      <td className="py-2.5 px-3.5 text-slate-800">{item.material}</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 font-semibold text-slate-700 align-top">Bahan Konstruksi</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 text-slate-800 break-words">{item.material}</td>
                     </tr>
                   )}
                   {item.standard_method && (
                     <tr className="border-b border-slate-100 bg-slate-50/60">
-                      <td className="py-2.5 px-3.5 font-semibold text-slate-700">Standar Uji / Acuan</td>
-                      <td className="py-2.5 px-3.5 text-slate-800">{item.standard_method}</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 font-semibold text-slate-700 align-top">Standar Uji / Acuan</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 text-slate-800 break-words">{item.standard_method}</td>
                     </tr>
                   )}
                   {item.power_calibration && (
                     <tr className="border-b border-slate-100">
-                      <td className="py-2.5 px-3.5 font-semibold text-slate-700">Catu Daya & Kalibrasi</td>
-                      <td className="py-2.5 px-3.5 text-slate-800">{item.power_calibration}</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 font-semibold text-slate-700 align-top">Catu Daya & Kalibrasi</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 text-slate-800 break-words">{item.power_calibration}</td>
                     </tr>
                   )}
                   {item.location && (
                     <tr className="bg-slate-50/60">
-                      <td className="py-2.5 px-3.5 font-semibold text-slate-700">Posisi Rak Penyimpanan</td>
-                      <td className="py-2.5 px-3.5 text-slate-800">{item.location}</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 font-semibold text-slate-700 align-top">Posisi Rak Penyimpanan</td>
+                      <td className="py-2.5 px-3 sm:px-3.5 text-slate-800 break-words">{item.location}</td>
                     </tr>
                   )}
                 </tbody>

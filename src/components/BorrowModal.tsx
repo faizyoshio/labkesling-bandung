@@ -153,18 +153,18 @@ export const BorrowModal: React.FC<BorrowModalProps> = ({
       <div className="animate-modal-pop relative w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh] z-10">
         
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-slate-200 bg-slate-50">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-2.5 px-4 sm:px-6 py-3.5 border-b border-slate-200 bg-slate-50">
+          <div className="flex items-center gap-2.5 min-w-0 flex-1">
             <img
               src="/logo-poltekkes-bandung.png"
               alt="Logo Poltekkes Bandung"
-              className="h-8 w-auto object-contain shrink-0"
+              className="h-7 sm:h-8 w-auto object-contain shrink-0 hidden xs:block"
             />
-            <div>
-              <h2 className="text-sm sm:text-base font-bold text-slate-900">
+            <div className="min-w-0">
+              <h2 className="text-xs sm:text-base font-bold text-slate-900 truncate">
                 Formulir Peminjaman Alat Laboratorium
               </h2>
-              <p className="text-[11px] text-slate-500">
+              <p className="text-[10px] sm:text-[11px] text-slate-500 truncate">
                 Tujuan WhatsApp:{' '}
                 <strong className="text-slate-700">
                   {settings.whatsapp_number ? `+${settings.whatsapp_number}` : 'Belum diatur di ENV'}
@@ -174,31 +174,31 @@ export const BorrowModal: React.FC<BorrowModalProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             {/* Tab Switcher */}
-            <div className="flex p-0.5 bg-slate-200 rounded-lg text-xs font-semibold">
+            <div className="flex p-0.5 bg-slate-200 rounded-lg text-[11px] sm:text-xs font-semibold">
               <button
                 type="button"
                 onClick={() => setActiveTab('form')}
-                className={`px-3 py-1.5 rounded-md flex items-center gap-1.5 transition-all ${
+                className={`px-2.5 py-1.5 rounded-md flex items-center gap-1 transition-all ${
                   activeTab === 'form'
                     ? 'bg-white text-slate-900 shadow-2xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                <Edit3 className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Formulir</span>
+                <Edit3 className="w-3.5 h-3.5 shrink-0" />
+                <span>Form</span>
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab('preview')}
-                className={`px-3 py-1.5 rounded-md flex items-center gap-1.5 transition-all ${
+                className={`px-2.5 py-1.5 rounded-md flex items-center gap-1 transition-all ${
                   activeTab === 'preview'
                     ? 'bg-white text-emerald-800 shadow-2xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                <Eye className="w-3.5 h-3.5" />
+                <Eye className="w-3.5 h-3.5 shrink-0" />
                 <span>Pratinjau</span>
               </button>
             </div>

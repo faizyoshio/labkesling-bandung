@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
                 <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                <span>Kampus Kesling Cimahi</span>
+                <span>Poltekkes Kemenkes Bandung Kampus B</span>
               </div>
             </div>
 
@@ -124,12 +124,12 @@ export const Hero: React.FC<HeroProps> = ({
             style={{ animationDelay: '180ms' }}
             className="lg:col-span-5 animate-fade-up"
           >
-            <div className="bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-emerald-200/80 transition-all duration-300">
-              <div className="flex items-center justify-between pb-3.5 border-b border-slate-200">
+            <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-emerald-200/80 transition-all duration-300">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3.5 border-b border-slate-200">
                 <h2 className="text-xs sm:text-sm font-bold text-slate-900">
                   Prosedur Peminjaman Praktikum
                 </h2>
-                <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100/70 px-2.5 py-0.5 rounded-md">
+                <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100/70 px-2.5 py-0.5 rounded-md whitespace-nowrap shrink-0">
                   Sanitasi Lingkungan
                 </span>
               </div>
@@ -172,9 +172,9 @@ export const Hero: React.FC<HeroProps> = ({
                 </li>
               </ol>
 
-              <div className="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-500 flex items-center justify-between">
+              <div className="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-500 flex flex-wrap items-center justify-between gap-1">
                 <span>Pengambilan Alat:</span>
-                <span className="font-semibold text-slate-800">Ruang Inventaris Lab Kesling Cimahi</span>
+                <span className="font-semibold text-slate-800">Poltekkes Kemenkes Bandung Kampus B</span>
               </div>
             </div>
           </div>

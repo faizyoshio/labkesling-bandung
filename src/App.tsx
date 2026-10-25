@@ -199,16 +199,16 @@ export function App() {
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                   Katalog Alat Laboratorium Sanitasi
                 </h2>
                 <button
                   onClick={() => setAssistantsModalOpen(true)}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-[11px] font-bold rounded-lg border border-emerald-200 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-[11px] font-bold rounded-lg border border-emerald-200 transition-colors whitespace-nowrap shrink-0"
                   title="Lihat Tim Asisten Lab"
                 >
-                  <Users className="w-3 h-3 text-emerald-600" />
+                  <Users className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                   <span>Tim Asisten Lab</span>
                 </button>
               </div>
@@ -298,7 +298,7 @@ export function App() {
           </div>
           <div className="text-center sm:text-right text-[11px] text-slate-400">
             <p>Sistem Layanan Peminjaman Alat Laboratorium Terintegrasi WhatsApp Langsung.</p>
-            <p className="mt-0.5">Jl. Babakan Loa, Cimahi Utara (Kampus Kesehatan Lingkungan).</p>
+            <p className="mt-0.5">Poltekkes Kemenkes Bandung Kampus B — Jurusan Kesehatan Lingkungan.</p>
           </div>
         </div>
       </footer>

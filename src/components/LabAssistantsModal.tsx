@@ -55,23 +55,23 @@ export const LabAssistantsModal: React.FC<LabAssistantsModalProps> = ({
       <div className="animate-modal-pop relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh] z-10">
         
         {/* Header */}
-        <div className="p-6 border-b border-slate-100 bg-gradient-to-r from-emerald-50/80 via-teal-50/40 to-white flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="p-4 sm:p-6 border-b border-slate-100 bg-gradient-to-r from-emerald-50/80 via-teal-50/40 to-white flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
             <img
               src="/logo-poltekkes-bandung.png"
               alt="Logo Poltekkes Kemenkes Bandung"
-              className="h-8 sm:h-9 w-auto object-contain shrink-0"
+              className="h-7 sm:h-9 w-auto object-contain shrink-0 hidden xs:block"
             />
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <h2 className="text-lg font-extrabold text-slate-900">
+                <h2 className="text-sm sm:text-lg font-extrabold text-slate-900 truncate">
                   Struktur Pengelola & Asisten Laboratorium
                 </h2>
-                <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 shrink-0">
                   Resmi Kesling
                 </span>
               </div>
-              <p className="text-xs text-slate-600 font-medium mt-0.5">
+              <p className="text-[11px] sm:text-xs text-slate-600 font-medium mt-0.5 truncate">
                 {labName} • {departmentName} • {campusName}
               </p>
             </div>
@@ -79,15 +79,15 @@ export const LabAssistantsModal: React.FC<LabAssistantsModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
+            className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Filter Pills & Sample Badge */}
-        <div className="px-6 py-3 bg-slate-50 border-b border-slate-100 flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
+        <div className="px-4 sm:px-6 py-3 bg-slate-50 border-b border-slate-100 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => setFilter('all')}
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${

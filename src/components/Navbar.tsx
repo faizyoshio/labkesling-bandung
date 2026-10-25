@@ -24,25 +24,25 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
           
           {/* Logo & Lab Title Poltekkes Bandung */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 shrink">
             <img
               src={settings.logo_url || '/logo-poltekkes-bandung.png'}
               alt="Logo Poltekkes Kemenkes Bandung"
-              className="h-9 sm:h-11 w-auto max-w-[190px] sm:max-w-[240px] object-contain"
+              className="h-8 sm:h-11 w-auto max-w-[148px] xs:max-w-[180px] sm:max-w-[230px] object-contain shrink-0"
             />
-            <div className="hidden md:block border-l border-slate-200 pl-3">
+            <div className="hidden lg:block border-l border-slate-200 pl-3 min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-bold text-xs sm:text-sm text-slate-800 leading-tight">
+                <span className="font-bold text-xs sm:text-sm text-slate-800 leading-tight truncate">
                   {settings.department_name}
                 </span>
-                <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
                   Lab Terpadu
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500 line-clamp-1">
+              <p className="text-[11px] text-slate-500 truncate">
                 {settings.lab_name}
               </p>
             </div>
@@ -74,9 +74,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onOpenAssistants}
               title="Struktur Pengelola & Asisten Laboratorium"
-              className="px-2.5 py-2 text-slate-700 hover:text-emerald-700 bg-slate-100 hover:bg-emerald-50 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-colors border border-slate-200"
+              className="px-2.5 py-2 text-slate-700 hover:text-emerald-700 bg-slate-100 hover:bg-emerald-50 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-colors border border-slate-200 whitespace-nowrap shrink-0"
             >
-              <Users className="w-4 h-4 text-emerald-600" />
+              <Users className="w-4 h-4 text-emerald-600 shrink-0" />
               <span className="hidden md:inline">Asisten Lab</span>
             </button>
 
@@ -84,16 +84,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onOpenHistory}
               title="Riwayat Peminjaman Alat"
-              className="p-2 sm:px-2.5 sm:py-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-100 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors border border-slate-200/70"
+              className="p-2 sm:px-2.5 sm:py-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-100 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-colors border border-slate-200/70 whitespace-nowrap shrink-0"
             >
-              <History className="w-4 h-4 text-slate-600" />
+              <History className="w-4 h-4 text-slate-600 shrink-0" />
               <span className="hidden xl:inline">Log Pinjam</span>
             </button>
 
             {/* Cart / Selected Items Badge */}
             <button
               onClick={onOpenCart}
-              className="btn-shine relative p-2.5 sm:px-3.5 sm:py-2 bg-emerald-600 hover:bg-emerald-700 hover:-translate-y-0.5 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5 shadow-md shadow-emerald-600/20 transition-all duration-200"
+              className="btn-shine relative p-2.5 sm:px-3.5 sm:py-2 bg-emerald-600 hover:bg-emerald-700 hover:-translate-y-0.5 active:scale-95 text-white rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5 shadow-md shadow-emerald-600/20 transition-all duration-200 whitespace-nowrap shrink-0"
             >
               <ShoppingBag className="w-4 h-4" />
               <span className="hidden sm:inline">Keranjang</span>
