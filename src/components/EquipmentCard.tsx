@@ -23,23 +23,24 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
     switch (item.status) {
       case 'Tersedia':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-700 text-white shadow-xs">
-            <CheckCircle2 className="w-3 h-3" />
-            Tersedia ({item.available_stock})
+          <span className="inline-flex items-center gap-1 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-semibold bg-emerald-700 text-white shadow-xs">
+            <CheckCircle2 className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0" />
+            <span className="hidden xs:inline">Tersedia</span> ({item.available_stock})
           </span>
         );
       case 'Terbatas':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-amber-600 text-white shadow-xs">
-            <AlertTriangle className="w-3 h-3" />
+          <span className="inline-flex items-center gap-1 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-semibold bg-amber-600 text-white shadow-xs">
+            <AlertTriangle className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0" />
             Sisa {item.available_stock}
           </span>
         );
       case 'Maintenance':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-rose-600 text-white shadow-xs">
-            <XCircle className="w-3 h-3" />
-            Maintenance
+          <span className="inline-flex items-center gap-1 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-semibold bg-rose-600 text-white shadow-xs">
+            <XCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0" />
+            <span className="hidden xs:inline">Maintenance</span>
+            <span className="xs:hidden">Maint.</span>
           </span>
         );
       default:
@@ -52,13 +53,13 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
   return (
     <div
       style={{ animationDelay: staggerDelay }}
-      className="animate-fade-up card-interactive bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300/80 flex flex-col group"
+      className="animate-fade-up card-interactive bg-white rounded-xl sm:rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300/80 flex flex-col group"
     >
       
       {/* Image Container with clickable trigger for detail */}
       <div 
         onClick={() => onViewDetail(item)}
-        className="relative h-52 w-full bg-white border-b border-slate-100 p-3 flex items-center justify-center overflow-hidden cursor-pointer"
+        className="relative h-36 xs:h-44 sm:h-52 w-full bg-white border-b border-slate-100 p-2 sm:p-3 flex items-center justify-center overflow-hidden cursor-pointer"
       >
         <img
           src={item.image_url}
@@ -68,36 +69,37 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
         />
 
         {/* Status Badge Top Left */}
-        <div className="absolute top-3 left-3 z-10">
+        <div className="absolute top-2 sm:top-3 left-2 sm:left-3 z-10">
           {getStatusBadge()}
         </div>
 
         {/* Category Pill Bottom Left */}
-        <div className="absolute bottom-3 left-3 z-10">
-          <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md bg-white/95 text-slate-800 border border-slate-200 shadow-xs">
+        <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 z-10">
+          <span className="text-[9px] sm:text-[10px] font-bold tracking-wider uppercase px-1.5 sm:px-2 py-0.5 rounded-md bg-white/95 text-slate-800 border border-slate-200 shadow-xs">
             {item.category}
           </span>
         </div>
       </div>
 
       {/* Card Content */}
-      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+      <div className="p-2.5 sm:p-5 flex-1 flex flex-col justify-between">
         <div>
           <h3 
             onClick={() => onViewDetail(item)}
-            className="font-bold text-sm sm:text-base text-slate-900 hover:text-emerald-800 cursor-pointer line-clamp-1 transition-colors"
+            className="font-bold text-xs sm:text-base text-slate-900 hover:text-emerald-800 cursor-pointer line-clamp-2 sm:line-clamp-1 transition-colors leading-snug sm:leading-normal min-h-[2rem] sm:min-h-0"
+            title={item.name}
           >
             {item.name}
           </h3>
 
           {/* Function Description Snippet */}
-          <p className="text-xs text-slate-600 mt-1.5 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 mt-1.5 line-clamp-2 leading-relaxed hidden sm:block">
             {item.function_desc}
           </p>
 
           {/* Detail Spesifikasi Teknis Singkat */}
           {(item.brand_model || item.capacity_spec) && (
-            <div className="mt-2.5 p-2 rounded-lg bg-slate-50 border border-slate-200 text-[11px] text-slate-700 flex items-start gap-1.5">
+            <div className="hidden sm:flex mt-2.5 p-2 rounded-lg bg-slate-50 border border-slate-200 text-[11px] text-slate-700 items-start gap-1.5">
               <Sliders className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
               <div className="min-w-0 space-y-0.5">
                 {item.brand_model && (
@@ -111,27 +113,27 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
           )}
 
           {/* Location & Stock Availability */}
-          <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-            <span className="flex items-center gap-1 text-slate-600 font-medium truncate pr-2">
-              <MapPin className="w-3 h-3 text-slate-400 shrink-0" />
-              <span className="truncate">{item.location || 'Ruang Lab Utama'}</span>
+          <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-500 gap-1">
+            <span className="flex items-center gap-0.5 sm:gap-1 text-slate-600 font-medium truncate min-w-0">
+              <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400 shrink-0" />
+              <span className="truncate">{item.location || 'Ruang Lab'}</span>
             </span>
-            <span className="font-semibold text-slate-700 shrink-0">
-              Tersedia: {item.available_stock}/{item.total_stock}
+            <span className="font-semibold text-slate-700 shrink-0 whitespace-nowrap">
+              {item.available_stock}/{item.total_stock}
             </span>
           </div>
         </div>
 
         {/* Actions Button Bar */}
-        <div className="mt-4 pt-3 border-t border-slate-100 grid grid-cols-12 gap-2">
+        <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-slate-100 grid grid-cols-12 gap-1.5 sm:gap-2">
           {/* Tombol Detail & Fungsi */}
           <button
             type="button"
             onClick={() => onViewDetail(item)}
             title="Lihat Rincian Spesifikasi & SOP Alat"
-            className="col-span-3 py-2 px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold flex items-center justify-center gap-1 transition-colors"
+            className="col-span-3 py-1.5 sm:py-2 px-1 sm:px-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg sm:rounded-xl text-xs font-semibold flex items-center justify-center gap-1 transition-colors"
           >
-            <Info className="w-3.5 h-3.5" />
+            <Info className="w-3.5 h-3.5 shrink-0" />
             <span className="hidden sm:inline">Detail</span>
           </button>
 
@@ -141,13 +143,13 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
             onClick={() => onAddToCart(item)}
             title={isInCart ? 'Sudah di Keranjang' : 'Tambah ke Keranjang'}
             disabled={item.status === 'Maintenance'}
-            className={`col-span-3 py-2 px-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1 transition-all ${
+            className={`col-span-3 py-1.5 sm:py-2 px-1 sm:px-2 rounded-lg sm:rounded-xl text-xs font-semibold flex items-center justify-center gap-1 transition-all ${
               isInCart
                 ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
                 : 'bg-slate-100 hover:bg-slate-200 text-slate-700 disabled:opacity-50'
             }`}
           >
-            <Plus className="w-3.5 h-3.5" />
+            <Plus className="w-3.5 h-3.5 shrink-0" />
             <span className="hidden sm:inline">Cart</span>
           </button>
 
@@ -156,10 +158,11 @@ export const EquipmentCard: React.FC<EquipmentCardProps> = ({
             type="button"
             onClick={() => onDirectBorrow(item)}
             disabled={item.status === 'Maintenance'}
-            className="btn-shine col-span-6 py-2 px-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 disabled:opacity-50 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 shadow-xs hover:shadow-md hover:shadow-emerald-700/15 transition-all"
+            className="btn-shine col-span-6 py-1.5 sm:py-2 px-1.5 sm:px-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 disabled:opacity-50 text-white rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold flex items-center justify-center gap-1 sm:gap-1.5 shadow-xs hover:shadow-md hover:shadow-emerald-700/15 transition-all truncate"
           >
-            <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            <span>Pinjam via WA</span>
+            <Send className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+            <span className="hidden sm:inline truncate">Pinjam via WA</span>
+            <span className="sm:hidden truncate">Pinjam</span>
           </button>
         </div>
 

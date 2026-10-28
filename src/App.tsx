@@ -193,7 +193,7 @@ export function App() {
       />
 
       {/* Main Catalog Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-1 w-full space-y-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12 flex-1 w-full space-y-6 sm:space-y-8">
         
         {/* Section Heading & Category Filters */}
         <div className="space-y-4">
@@ -231,18 +231,18 @@ export function App() {
 
         {/* Equipment Grid or Empty State */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="bg-white rounded-2xl h-80 border border-slate-200 p-4 animate-pulse space-y-4">
-                <div className="bg-slate-200 h-44 rounded-xl" />
+              <div key={i} className="bg-white rounded-xl sm:rounded-2xl h-64 sm:h-80 border border-slate-200 p-3 sm:p-4 animate-pulse space-y-3">
+                <div className="bg-slate-200 h-36 sm:h-44 rounded-lg sm:rounded-xl" />
                 <div className="h-4 bg-slate-200 rounded-sm w-3/4" />
                 <div className="h-3 bg-slate-200 rounded-sm w-1/2" />
-                <div className="h-8 bg-slate-200 rounded-xl" />
+                <div className="h-7 sm:h-8 bg-slate-200 rounded-lg sm:rounded-xl" />
               </div>
             ))}
           </div>
         ) : filteredEquipment.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {filteredEquipment.map((item, idx) => (
               <EquipmentCard
                 key={`${selectedCategory}-${item.id}`}
